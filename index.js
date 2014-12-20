@@ -25,6 +25,7 @@ app.get(['', '/:string'], function(req, res, next){
 		.drawText(0, 0, str.toUpperCase(), "North")
         .stream(function streamOut (err, stdout, stderr) {
             if (err) return next(err);
+            res.writeHead(200, {'Content-Type':'image/png'});
             stdout.pipe(res); //pipe to response
 
             // the following line gave me an error compaining for already sent headers
