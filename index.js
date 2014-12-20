@@ -1,10 +1,10 @@
 var gm = require('gm').subClass({ imageMagick: true });
 
 var express = require('express')
-var app = express()    
-app.get('/:string', function(req, res, next){
+var app = express()
+app.get(['', '/:string'], function(req, res, next){
 
-	var string = req.params.string;
+	var string = req.params.string || req.query.text || "";
 	var splitted = string.split(" ");
 	var i = 0;
 	var str = "";
@@ -28,7 +28,7 @@ app.get('/:string', function(req, res, next){
             stdout.pipe(res); //pipe to response
 
             // the following line gave me an error compaining for already sent headers
-            //stdout.on('end', function(){res.writeHead(200, { 'Content-Type': 'ima    ge/jpeg' });}); 
+            //stdout.on('end', function(){res.writeHead(200, { 'Content-Type': 'ima    ge/jpeg' });});
 
             stdout.on('error', next);
     });
