@@ -1,0 +1,27 @@
+{
+  "name": "hjb",
+  "version": "1.0.0",
+  "description": "Waarom geen githubrep... HOU JE BEK!",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.10.6",
+    "gm": "^1.17.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomasharkema/hjb"
+  },
+  "keywords": [
+    "hjb"
+  ],
+  "author": "Tomas Harkema & Jasper Haggenburg & Hidde Statema",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomasharkema/hjb/issues"
+  },
+  "homepage": "https://github.com/tomasharkema/hjb"
+}
