@@ -2,7 +2,7 @@ var gm = require('gm').subClass({ imageMagick: true });
 
 var express = require('express')
 var app = express()
-app.get(['', '/:string'], function(req, res, next){
+app.get('/:string', function(req, res, next){
 
 	var string = req.params.string || req.query.text || "";
 	var splitted = string.split(" ");
@@ -33,6 +33,10 @@ app.get(['', '/:string'], function(req, res, next){
 
             stdout.on('error', next);
     });
+});
+
+app.get('/', function(req, res){
+	res.send('http://hjb.herokuapp.com/'+encodeURIComponent(req.query.text));
 });
 
 app.listen(process.env.PORT || 3000);
